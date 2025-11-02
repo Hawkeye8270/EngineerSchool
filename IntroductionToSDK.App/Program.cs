@@ -77,9 +77,6 @@ namespace IntroductionToSDK {
 			// // сумма командировочных (если руками вводим)   
 			// officeMemo.MainInfo["SumMoney"] = "23,25";                          
 
-
-
-
 			// Организация (CardDocument.MainInfo.ResponsDepartment)
 			var organizations = (IList<BaseCardSectionRow>)officeMemo.GetSection(CardDocument.MainInfo.ID);
 			var organizationMikoyan = new BaseCardSectionRow();
@@ -131,14 +128,11 @@ namespace IntroductionToSDK {
 			// Телефон
 			officeMemo.MainInfo["Phone"] = staffSvc.GetEmployeeManager(traveler).Phone;
 
-
 			context.AcceptChanges();
-
 
 			// Загрузка файла
 			string filePath = @"D:\Temp\HomeWork_02.docx";
 			docSvc.AddMainFile(officeMemo, filePath);
-
 
 			context.AcceptChanges();
 
@@ -147,6 +141,7 @@ namespace IntroductionToSDK {
 
 			context.AcceptChanges();
 		}
+
 
 		public static void CreateSetOfCards(UserSession session, ObjectContext context) {
 
